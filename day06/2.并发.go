@@ -2,9 +2,6 @@ package main
 
 import (
 	"fmt"
-	"math/rand"
-	"strconv"
-	"sync"
 	"time"
 )
 
@@ -1070,7 +1067,7 @@ atomic包提供了底层的原子级内存操作，对于同步算法的实现�
 开启一个 goroutine 循环生成int64类型的随机数，发送到jobChan
 开启24个 goroutine 从jobChan中取出随机数计算各位数的和，将结果发送到resultChan
 主 goroutine 从resultChan取出结果并打印到终端输出
-*/
+
 
 func randInt64(jobChan chan<- int64) {
 	defer wg.Done()
@@ -1112,4 +1109,16 @@ func main() {
 	for v := range resultChan {
 		fmt.Printf("结果为：%d\n", v)
 	}
+}
+*/
+
+func main2() {
+	// var ch1 chan int  //chan send (nil chan)
+	ch1 := make(chan int)
+	go func() {
+		i := <-ch1
+		fmt.Println(i)
+	}()
+	ch1 <- 10
+	time.Sleep(10 * time.Second)
 }
