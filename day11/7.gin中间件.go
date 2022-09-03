@@ -1,12 +1,5 @@
 package main
 
-import (
-	"fmt"
-	"github.com/gin-gonic/gin"
-	"net/http"
-	"time"
-)
-
 /*
 gin可以构建中间件，但它支队注册过的路由函数起作用。
 对于分组路由，嵌套使用中间件，可以限定中间件的作用范围。
@@ -14,6 +7,7 @@ gin可以构建中间件，但它支队注册过的路由函数起作用。
 gin中间件必须是一个*gin.HandlerFunc类型
 */
 
+/*
 //定义一个全局的中间件
 func MiddleWare() gin.HandlerFunc {
 
@@ -56,3 +50,5 @@ func main() {
 
 	r.Run(":8000")
 }
+
+*/
