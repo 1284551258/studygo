@@ -6,7 +6,7 @@ import "time"
 //id, category_id, content, title, view_count, comment_count, username, status, summary, create_time, update_time
 
 type ArticleInfo struct {
-	ArticleId    int64     `db:"id"`
+	ArticleId    int64     `db:"id" json:"Id"`
 	CategoryId   int64     `db:"category_id"`
 	Title        string    `db:"title"`
 	ViewCount    uint32    `db:"view_count"`
@@ -14,6 +14,7 @@ type ArticleInfo struct {
 	Username     string    `db:"username"`
 	Summary      string    `db:"summary"`
 	CreateTime   time.Time `db:"create_time"`
+	Status       int       `db:"status"`
 }
 
 type ArticleDetail struct {
